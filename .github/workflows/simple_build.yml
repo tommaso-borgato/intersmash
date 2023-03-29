@@ -1,6 +1,10 @@
 name: Intersmash - Simple build workflow
 
-on: [push]
+#on: [push]
+on:
+  push:
+    branches-ignore:
+      - openshift-sandbox
 
 jobs:
   build:
