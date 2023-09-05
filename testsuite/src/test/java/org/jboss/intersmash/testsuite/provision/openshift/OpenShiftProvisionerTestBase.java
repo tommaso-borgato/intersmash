@@ -144,6 +144,13 @@ public class OpenShiftProvisionerTestBase {
 			}
 
 			@Override
+			public String featurePackLocation() {
+				// this value is supposed to be overridden by the CI Jenkins job by passing e.g.
+				// "mvn ... -Dwildfly.feature-pack.location="
+				return IntersmashConfig.getWildflyFeaturePackLocation();
+			}
+
+			@Override
 			public String cloudFeaturePackLocation() {
 				// this value is supposed to be overridden by the CI Jenkins job by passing e.g.
 				// "mvn ... -Dwildfly.cloud-feature-pack.location="
@@ -247,6 +254,13 @@ public class OpenShiftProvisionerTestBase {
 				// this value is supposed to be overridden by the CI Jenkins job by passing e.g.
 				// "mvn ... -Dwildfly.ee-feature-pack.location="
 				return IntersmashConfig.getWildflyEeFeaturePackLocation();
+			}
+
+			@Override
+			public String featurePackLocation() {
+				// this value is supposed to be overridden by the CI Jenkins job by passing e.g.
+				// "mvn ... -Dwildfly.feature-pack.location="
+				return IntersmashConfig.getWildflyFeaturePackLocation();
 			}
 
 			@Override
